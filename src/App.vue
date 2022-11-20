@@ -1,13 +1,13 @@
 <template>
   <div class="header">
-    header
+    header22 222
     <div class="header-element">header-element</div>
   </div>
   <div class="hello">hello</div>
-  <img alt="tree" :src="tree">
+  <!--  <img alt="tree" :src="tree">-->
   <!--  <hello-world msg="3"></hello-world>-->
   <p>
-    {{ string1 }}
+    {{ string1 }}11code {{ code }}
   </p>
 </template>
 
@@ -28,20 +28,14 @@ console.log(obj1.age)
 console.log(code)
 const string1 = ref('')
 string1.value = JSON.stringify(code).toString()
+
+
+console.log('import', import.meta)
+console.log('import.meta', import.meta.env)
+console.log('import.meta', import.meta.env)
+
 </script>
 
 <style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-}
 
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
 </style>

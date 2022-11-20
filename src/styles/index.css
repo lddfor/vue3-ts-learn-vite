@@ -17,12 +17,14 @@
     -webkit-text-size-adjust: 100%;
     --main-bg-color: red
 }
-.header{
-    height: 30px;
-    line-height: 30px;
+
+.header {
+    /*height: 30px;*/
+    /*line-height: 30px;*/
     /*background: red;*/
 }
-.hello{
+
+.hello {
     background: white;
     color: var(--main-bg-color)
 }
