@@ -1,7 +1,7 @@
 import {defineConfig} from 'vite'
 import vue from '@vitejs/plugin-vue'
 
-// https://vitejs.dev/config/   33  npm install --registry=http://registry.npmmirror.com
+// https://vitejs.dev/config/ 初始化  npm install --registry=http://registry.npmmirror.com
 export default defineConfig({
   plugins: [vue()],
   resolve: {
