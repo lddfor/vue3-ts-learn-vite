@@ -18,3 +18,4 @@ module.exports = {
   endOfLine: 'lf', //结束行形式
   embeddedLanguageFormatting: 'auto', //对引用代码进行格式化
 };
+
