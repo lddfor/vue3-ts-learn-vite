@@ -1,7 +1,8 @@
 import {createMemoryHistory, createRouter, createWebHashHistory} from 'vue-router'
 
 // import Login from '@/pages/login/index.vue'
-import OneIndex from '@/view/oneIndex/index.vue'
+import LineIndex from '@/view/lineIndex/index.vue'
+import FontIndex from '@/view/fontIndex/index.vue'
 import HomePage from '@/view/homePage/index.vue'
 // import PiniaTwo from '@/pages/pinia/piniaTwo.vue'
 import Home from '@/view/home/index.vue'
@@ -24,16 +25,24 @@ const routes = [
         }
       },
       {
-        path: 'one',
-        name: 'One',
-        redirect: {name: 'OneIndex'},
+        path: 'line',
+        name: 'Line',
+        redirect: {name: 'LineIndex'},
         children: [
           {
-            path: 'oneIndex',
-            name: 'OneIndex',
-            component: OneIndex,
+            path: 'lineIndex',
+            name: 'LineIndex',
+            component: LineIndex,
             meta: {
-              message: 'OneIndex'
+              message: '画线'
+            }
+          },
+          {
+            path: 'fontIndex',
+            name: 'FontIndex',
+            component: FontIndex,
+            meta: {
+              message: '创建文字'
             }
           },
           // {

@@ -11,14 +11,14 @@
   import {ElLoading} from 'element-plus'
 
   const openFullScreen2 = () => {
-   const loading = ElLoading.service({
-    lock: true,
-    text: 'Loading',
-    background: 'rgba(0, 0, 0, 0.7)',
-   })
-   setTimeout(() => {
-    loading.close()
-   }, 2000)
+    const loading = ElLoading.service({
+      lock: true,
+      text: 'Loading',
+      background: 'rgba(0, 0, 0, 0.7)',
+    })
+    setTimeout(() => {
+      loading.close()
+    }, 2000)
   }
 </script>
 

@@ -14,7 +14,7 @@ module.exports = {
   parser: "vue-eslint-parser",
   rules: {
     'vue/multi-word-component-names': 'off',
-    'vue/script-indent': ['error', 1, {'baseIndent': 2}],
+    'vue/script-indent': ['error', 2, {'baseIndent': 1}],
     semi: [2, "never"],
     'no-var': 'error',
     indent: ['error', 2],

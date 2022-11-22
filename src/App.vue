@@ -14,7 +14,7 @@
 // import code from '@/utils/index'
 //
 // import pkgJson from '../package.json'
-// 
+//  
 // console.log('pkgJson', pkgJson)
 // console.log(obj1.age)
 // console.log(code)

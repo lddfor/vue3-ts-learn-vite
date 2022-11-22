@@ -38,7 +38,7 @@
 </template>
 <script lang="ts">
   export default {
-   name: 'AsideMenu'
+    name: 'AsideMenu'
   }
 </script>
 <script lang="ts" setup>
@@ -47,18 +47,18 @@
   import {useRoute, useRouter} from 'vue-router'
 
   interface Item {
-   name?: string
-   path?: string
-   meta?: Object
-   index: string
+    name?: string
+    path?: string
+    meta?: Object
+    index: string
   }
 
   interface RouteItem {
-   name: string
-   path?: string
-   component: any
+    name: string
+    path?: string
+    component: any
 
-   [x: string]: any
+    [x: string]: any
   }
 
 
@@ -73,16 +73,16 @@
   const result: RouteItem[] = []
 
   routeList.map((item: any) => {
-   if (item.name !== 'HomePage') {
-    result.push(item)
-   }
+    if (item.name !== 'HomePage') {
+      result.push(item)
+    }
   })
   console.log('result', result)
   const itemHandle = (item: Item) => {
-   console.log('item', item)
-   router.replace({
-    name: item.index
-   })
+    console.log('item', item)
+    router.replace({
+      name: item.index
+    })
   }
 </script>
 <style lang="less" scoped>
