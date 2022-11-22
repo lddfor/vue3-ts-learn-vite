@@ -13,6 +13,8 @@ module.exports = {
 
   parser: "vue-eslint-parser",
   rules: {
+    'vue/multi-word-component-names': 'off',
+    'vue/script-indent': ['error', 1, {'baseIndent': 2}],
     semi: [2, "never"],
     'no-var': 'error',
     indent: ['error', 2],
@@ -24,8 +26,15 @@ module.exports = {
       singleline: {max: 5},
       multiline: {max: 5}
     }] // vue template模板元素第一行最多5个属性
-    // 其它的规则可以去eslint查看，根据自己需要进行添加
-  }
+  },
+  overrides: [
+    {
+      'files': ['*.vue'],
+      'rules': {
+        'indent': 'off'
+      }
+    }
+  ]
 }
 
 
