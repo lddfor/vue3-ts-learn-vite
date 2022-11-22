@@ -9,12 +9,11 @@
       </el-aside>
       <el-container class="container-wrapper">
         <header-component />
-        <el-main style="padding-top: 0">
+        <el-main>
           <el-scrollbar>
             <div class="scroll-right">
               <router-view />
             </div>
-
             <!-- 以下是路由的动画, 切换时要保证组件的 只有一个root节点才起作用 -->
             <!-- <router-view v-slot="{ Component }">
               <transition name="slide-fade">
@@ -69,6 +68,12 @@
   height: 100vh;
   overflow-y: auto;
 
+  .el-main {
+    padding-right: 0;
+    padding-top: 8px;
+    padding-left: 8px;
+  }
+
   .ep-menu {
     border-right: none;
   }
@@ -89,7 +94,7 @@
 
   .scroll-right {
     padding-right: 20px;
-    padding-top: 10px !important;
+    //padding-top: 20px;
   }
 
   .aside-wrapper {
@@ -117,10 +122,10 @@
     }
 
     .footer-wrapper {
-      //height: 15px;
+      height: 0;
       //line-height: 15px;
       //background: #bebebe;
-      font-size: 13px;
+      //font-size: 13px;
     }
   }
 
