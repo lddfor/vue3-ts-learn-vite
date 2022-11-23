@@ -93,7 +93,7 @@
   }
 
   .scroll-right {
-    padding-right: 20px;
+    padding-right: 12px;
     //padding-top: 20px;
   }
 

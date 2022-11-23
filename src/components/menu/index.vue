@@ -20,7 +20,7 @@
         <el-icon>
           <location />
         </el-icon>
-        <span class="weight-700">{{ routerItem.path }}</span>
+        <span class="weight-700">{{ routerItem.meta.message || routerItem.path }}</span>
       </template>
       <template v-if="routerItem.children && routerItem.path !== 'homePage'">
         <el-menu-item
@@ -67,7 +67,6 @@
   const defaultActive = ref<string | undefined>('')
   defaultActive.value = route.name as string
 
-  console.log('router', router)
   const tem = router.options.routes.find((item) => item.name === 'Root')
   const routeList = reactive(tem!.children!)
   const result: RouteItem[] = []
@@ -77,9 +76,7 @@
       result.push(item)
     }
   })
-  console.log('result', result)
   const itemHandle = (item: Item) => {
-    console.log('item', item)
     router.replace({
       name: item.index
     })

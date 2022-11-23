@@ -13,6 +13,8 @@ module.exports = {
 
   parser: "vue-eslint-parser",
   rules: {
+    'no-trailing-spaces':'error',  // 行尾的空格
+    'no-multi-spaces': "error",  //双等 全等 的空格
     'vue/multi-word-component-names': 'off',
     'vue/script-indent': ['error', 2, {'baseIndent': 1}],
     semi: [2, "never"],

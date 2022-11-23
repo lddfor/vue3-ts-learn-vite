@@ -1,10 +1,10 @@
 import {createMemoryHistory, createRouter, createWebHashHistory} from 'vue-router'
 
-// import Login from '@/pages/login/index.vue'
 import LineIndex from '@/view/lineIndex/index.vue'
 import FontIndex from '@/view/fontIndex/index.vue'
 import HomePage from '@/view/homePage/index.vue'
-// import PiniaTwo from '@/pages/pinia/piniaTwo.vue'
+import Document from '@/view/document/index.vue'
+import Controller from '@/view/controller/index.vue'
 import Home from '@/view/home/index.vue'
 
 const About = {template: '<div>About</div>'}
@@ -28,6 +28,9 @@ const routes = [
         path: 'line',
         name: 'Line',
         redirect: {name: 'LineIndex'},
+        meta: {
+          message: 'THREEJS 基础'
+        },
         children: [
           {
             path: 'lineIndex',
@@ -42,17 +45,24 @@ const routes = [
             name: 'FontIndex',
             component: FontIndex,
             meta: {
-              message: '创建文字'
+              message: '3D效果'
             }
           },
-          // {
-          //   path: 'piniaTwo',
-          //   name: 'PiniaTwo',
-          //   component: PiniaTwo,
-          //   meta: {
-          //     message: 'Pinia第二'
-          //   }
-          // }
+          {
+            path: 'document',
+            name: 'Document',
+            component: Document,
+            meta: {
+              message: '基础文档'
+            }
+          }, {
+            path: 'controller',
+            name: 'Controller',
+            component: Controller,
+            meta: {
+              message: '添加控制器'
+            }
+          },
         ]
       },
 
