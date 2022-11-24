@@ -29,4 +29,7 @@
     color: var(--main-bg-color)
 }
 
+body {
+    touch-action: none
+}
 

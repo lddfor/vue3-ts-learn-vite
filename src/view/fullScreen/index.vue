@@ -1,7 +1,7 @@
 <template>
   <div class="document">
     <canvas id="simple" />
-    <h5>全屏操作</h5>
+    <h5>全屏操作 和 添加GUI</h5>
   </div>
 </template>
 <script lang="ts" setup>
@@ -9,6 +9,7 @@
   import * as THREE from 'three'
   import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls'
   import gsap from 'gsap'
+  import * as gat from 'dat.gui'
   // 引入控制器
   const resizeRendererToDisplaySize = (renderer: any) => {
     const canvas = renderer.domElement
@@ -22,6 +23,8 @@
   }
   const isDirection = ref(false)
   onMounted(() => {
+
+    console.log('gat', gat)
     const canvas = document.querySelector('#simple') as HTMLCanvasElement
     const renderer = new THREE.WebGLRenderer({
       canvas,
@@ -51,22 +54,33 @@
 
     // 创建一个立方体  也就是几何体
     const boxWidth = 1
-    const boxHeight = 1
+    const boxHeight = 1.5
     const boxDepth = 1
     const geometry = new THREE.BoxGeometry(boxWidth, boxHeight, boxDepth)
+    const geometrySecond = new THREE.BoxGeometry(boxWidth, boxHeight, 1)
     // 添加材质 颜色
     const material = new THREE.MeshLambertMaterial({color: 0x44aa88})
-
+    const materialOther = new THREE.MeshLambertMaterial({color: 0x44aa88})
     //创建一个网格  添加 几何体和材质
 
     const cube = new THREE.Mesh(geometry, material)
-
-
+    const cubeOther = new THREE.Mesh(geometrySecond, materialOther)
+    console.log('cube', cube)
     cube.position.set(0, 0, 0)
-    scene.add(cube)
-
+    cubeOther.position.set(1, 1, 0)
+    // cube.material[1]
+    scene.add(cube, cubeOther)
+    console.log('scene', scene)
+    const gui = new gat.GUI()
+    gui.add(cube.position, 'x').min(-1).max(3).step(0.1).name('x轴修改')
     // 将场景和相机全部都放到render函数中
 
+    const params = {
+      color:  0x44aa88
+    }
+    gui.addColor(params, 'color').onChange((value: any) => {
+      cubeOther.material.color.set(value)
+    })
     // 添加控制器
     const control = new OrbitControls(camera, renderer.domElement)
     control.target = new THREE.Vector3(0, 0, 0)
@@ -94,7 +108,8 @@
     //     console.log('动画完成')
     //   }
     // })
-    gsap.to(cube.position, {x: 2, duration: 1, repeat: -1, 'yoyo': true})
+    gsap.to(cubeOther.position, {y: 2, duration: 1, repeat: -1, 'yoyo': true})
+    // gsap.to(cube.position, {y: 2, duration: 1, repeat: -1, 'yoyo': true})
     // repeat 要和 yoyo 一同使用
 
     window.addEventListener('dblclick', () => {
@@ -126,11 +141,14 @@
 <style lang="less" scoped>
 .document {
   width: 900px;
+  position: relative;
 
   #simple {
     height: 700px;
     width: 800px;
   }
+
+  touch-action: none
 }
 
 </style>
