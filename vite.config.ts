@@ -1,7 +1,10 @@
 import {defineConfig} from 'vite'
 import vue from '@vitejs/plugin-vue'
+// @ts-ignore
 import AutoImport from 'unplugin-auto-import/dist/vite'
+// @ts-ignore
 import Components from 'unplugin-vue-components/dist/vite'
+// @ts-ignore
 import {ElementPlusResolver} from 'unplugin-vue-components/dist/resolvers'
 
 // https://vitejs.dev/config/ 初始化  npm install --registry=http://registry.npmmirror.com

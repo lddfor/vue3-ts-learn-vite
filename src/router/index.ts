@@ -1,10 +1,14 @@
-import {createMemoryHistory, createRouter, createWebHashHistory} from 'vue-router'
+import {createRouter, createWebHashHistory} from 'vue-router'
 
 import LineIndex from '@/view/lineIndex/index.vue'
 import FontIndex from '@/view/fontIndex/index.vue'
 import HomePage from '@/view/homePage/index.vue'
 import Document from '@/view/document/index.vue'
 import Controller from '@/view/controller/index.vue'
+import AxesHelper from '@/view/axesHelper/index.vue'
+import GsapPlugin from '@/view/gsapPlugin/index.vue'
+import FullScreen from '@/view/fullScreen/index.vue'
+import BasicType from '@/view/basicType/index.vue'
 import Home from '@/view/home/index.vue'
 
 const About = {template: '<div>About</div>'}
@@ -61,6 +65,45 @@ const routes = [
             component: Controller,
             meta: {
               message: '添加控制器'
+            }
+          }, {
+            path: 'axesHelper',
+            name: 'AxesHelper',
+            component: AxesHelper,
+            meta: {
+              message: '添加坐标轴'
+            }
+          },
+          {
+            path: 'gsapPlugin',
+            name: 'GsapPlugin',
+            component: GsapPlugin,
+            meta: {
+              message: '添加 gsap 动画'
+            }
+          }, {
+            path: 'fullScreen',
+            name: 'FullScreen',
+            component: FullScreen,
+            meta: {
+              message: '全屏操作'
+            }
+          },
+        ]
+      }, {
+        path: 'ts',
+        name: 'TS',
+        redirect: {name: 'LineIndex'},
+        meta: {
+          message: 'TS 相关'
+        },
+        children: [
+          {
+            path: 'basicType',
+            name: 'BasicType',
+            component: BasicType,
+            meta: {
+              message: 'ts 基础相关'
             }
           },
         ]
