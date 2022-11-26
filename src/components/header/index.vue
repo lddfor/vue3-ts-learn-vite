@@ -8,6 +8,6 @@
   line-height: 50px;
   padding-left: 20px;
   font-weight: 700;
-  background: #747bff;
+  background: #304156;
 }
 </style>

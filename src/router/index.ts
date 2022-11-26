@@ -9,6 +9,8 @@ import AxesHelper from '@/view/axesHelper/index.vue'
 import GsapPlugin from '@/view/gsapPlugin/index.vue'
 import FullScreen from '@/view/fullScreen/index.vue'
 import BasicType from '@/view/basicType/index.vue'
+import Geometry from '@/view/geometry/index.vue'
+import TextureImport from '@/view/textureImport/index.vue'
 import Home from '@/view/home/index.vue'
 
 const About = {template: '<div>About</div>'}
@@ -87,6 +89,20 @@ const routes = [
             component: FullScreen,
             meta: {
               message: '全屏操作'
+            }
+          },{
+            path: 'geometry',
+            name: 'Geometry',
+            component: Geometry,
+            meta: {
+              message: '几何体'
+            }
+          },{
+            path: 'textureImport',
+            name: 'TextureImport',
+            component: TextureImport,
+            meta: {
+              message: '引入纹理'
             }
           },
         ]
