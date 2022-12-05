@@ -18,6 +18,12 @@
     --main-bg-color: red
 }
 
+h4 {
+    height: 38px;
+    line-height: 38px;
+    font-weight: 700;
+}
+
 .header {
     /*height: 30px;*/
     /*line-height: 30px;*/

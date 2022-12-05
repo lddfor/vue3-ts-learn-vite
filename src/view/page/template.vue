@@ -1,5 +1,5 @@
 <template>
-  document
+  document vue 模板文件
 </template>
 <script lang="ts" setup>
 

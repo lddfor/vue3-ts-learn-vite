@@ -11,6 +11,9 @@ import FullScreen from '@/view/fullScreen/index.vue'
 import BasicType from '@/view/basicType/index.vue'
 import Geometry from '@/view/geometry/index.vue'
 import TextureImport from '@/view/textureImport/index.vue'
+import Dispatch from '@/view/dispatch/index.vue'
+import CanvasDrag from '@/view/canvasDrag/index.vue'
+import Psychology from '@/view/psychology/index.vue'
 import Home from '@/view/home/index.vue'
 
 const About = {template: '<div>About</div>'}
@@ -122,6 +125,47 @@ const routes = [
               message: 'ts 基础相关'
             }
           },
+        ]
+      },{
+        path: 'canvas',
+        name: 'Canvas',
+        redirect: {name: 'CanvasIndex'},
+        meta: {
+          message: 'canvas 相关'
+        },
+        children: [
+          {
+            path: 'dispatch',
+            name: 'Dispatch',
+            component: Dispatch,
+            meta: {
+              message: 'canvas事件'
+            }
+          },{
+            path: 'canvasDrag',
+            name: 'CanvasDrag',
+            component: CanvasDrag,
+            meta: {
+              message: 'canvas拖拽'
+            }
+          },
+        ]
+      },{
+        path: 'psychology',
+        name: 'Psychology',
+        redirect: {name: 'Psychology'},
+        meta: {
+          message: '心理学相关'
+        },
+        children: [
+          {
+            path: 'index',
+            name: 'Index',
+            component: Psychology,
+            meta: {
+              message: '初识心理学'
+            }
+          }
         ]
       },
 

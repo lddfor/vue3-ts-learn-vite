@@ -3,7 +3,6 @@ interface UserInterface {
   age: number
 }
 
- 
 const obj1: UserInterface = {
   name: 'name',
   age: 11
