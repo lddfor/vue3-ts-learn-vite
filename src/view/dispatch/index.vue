@@ -37,8 +37,8 @@
     })
 
     const rect3 = canvas.rect({
-      x: 130,
-      y: 190,
+      x: 35,
+      y: 100,
       width: 30,
       height: 30,
       fillStyle: 'red'
