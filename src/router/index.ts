@@ -14,6 +14,7 @@ import TextureImport from '@/view/textureImport/index.vue'
 import Dispatch from '@/view/dispatch/index.vue'
 import CanvasDrag from '@/view/canvasDrag/index.vue'
 import Psychology from '@/view/psychology/index.vue'
+import Bitwise from '@/view/bitwiseOperation/bitwiseIndex.vue'
 import Home from '@/view/home/index.vue'
 
 const About = {template: '<div>About</div>'}
@@ -149,6 +150,23 @@ const routes = [
               message: 'canvas拖拽'
             }
           },
+        ]
+      },{
+        path: 'bitwiseOperation',
+        name: 'BitwiseOperation',
+        redirect: {name: 'BitwiseOperation'},
+        meta: {
+          message: 'JavaScript位运算'
+        },
+        children: [
+          {
+            path: 'bitwise',
+            name: 'Bitwise',
+            component: Bitwise,
+            meta: {
+              message: 'JS位运算'
+            }
+          }
         ]
       },{
         path: 'psychology',

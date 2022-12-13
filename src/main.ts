@@ -8,7 +8,6 @@ import 'element-plus/dist/index.css'
 import App from '@/App.vue'
 // import 'default-passive-events'
 // import './utils/rem.ts'  //为了移动端准备
-
 const app = createApp(App)
 app.use(router)
 app.use(ElementPlus)
