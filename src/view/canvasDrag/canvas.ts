@@ -90,7 +90,7 @@ class CanvasDrag {
   }
 
   canvasMouseupHandle(event: MouseEvent) {
-    if(this.isPoint){
+    if (this.isPoint) {
       this.isPoint = false
       this.polygons.locationX = event.clientX - this.polygons.offsetX
       this.polygons.locationY = event.clientY - this.polygons.offsetY
@@ -100,7 +100,7 @@ class CanvasDrag {
       console.log('this.polygons.offsetX', this.polygons.offsetX)
       console.log('this.polygons.offsetX', this.polygons.offsetX)
       this.canvas.removeEventListener('mousemove', this.canvasMousemoveHandle)
-    }else{
+    } else {
       this.canvas.removeEventListener('mousemove', this.canvasMousemoveHandle)
     }
 
@@ -124,7 +124,7 @@ class CanvasDrag {
       )
       this.context.fill()
       this.context.stroke()
-    }else{
+    } else {
       console.log('out')
       this.canvas.removeEventListener('mousemove', this.canvasMousemoveHandle)
       this.canvas.addEventListener('mouseup', this.canvasMouseupHandle)
