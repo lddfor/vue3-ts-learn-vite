@@ -1,6 +1,7 @@
 <template>
   <div>
     <canvas id="canvas-drag" width="400" height="400" />
+    <p>如果不存在矩形会进行绘制 如果存在会进行拖拽, 每一次拖拽都会放置在最上层. 记录上一次拖拽的矩形</p>
   </div>
   <div>
     <canvas id="canvas" width="200" height="200" />
