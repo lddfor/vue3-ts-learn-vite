@@ -27,5 +27,14 @@ export default defineConfig({
       '@components': '/src/components',
       'vue': 'vue/dist/vue.esm-bundler.js'
     }
+  },
+  server: {
+    proxy: {
+      '/backend': {
+        target: 'http://amt.livedev1.zkjin.com/backend',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/backend/, ''),
+      },
+    }
   }
 })

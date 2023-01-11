@@ -19,13 +19,10 @@
 <script lang="ts" setup>
 
   import {onMounted} from 'vue'
-
+  const inputChange = (event: Event) => {
+    console.log((event.target as HTMLInputElement).value)
+  }
   onMounted(() => {
-    const inputChange = (event: Event) => {
-      console.log((event.target as HTMLInputElement).value)
-    }
-
-
     // appendChild
     const div: HTMLDivElement = document.createElement('div')
     div.style.height = 100 + 'px'
