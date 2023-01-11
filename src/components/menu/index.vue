@@ -6,7 +6,6 @@
     active-text-color="#409eff"
   >
     <el-menu-item
-
       index="HomePage"
       route="homePage"
       @click="itemHandle({ index: 'HomePage' })">

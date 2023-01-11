@@ -13,9 +13,10 @@ import Geometry from '@/view/geometry/index.vue'
 import TextureImport from '@/view/textureImport/index.vue'
 import Dispatch from '@/view/dispatch/index.vue'
 import CanvasDrag from '@/view/canvasDrag/index.vue'
-import Psychology from '@/view/psychology/index.vue'
+import psychologyList from '@/view/psychology/index.vue'
 import Bitwise from '@/view/bitwiseOperation/bitwiseIndex.vue'
 import Home from '@/view/home/index.vue'
+import ESSyntax from '@/view/esSyntax/index.vue'
 
 const About = {template: '<div>About</div>'}
 
@@ -94,14 +95,14 @@ const routes = [
             meta: {
               message: '全屏操作'
             }
-          },{
+          }, {
             path: 'geometry',
             name: 'Geometry',
             component: Geometry,
             meta: {
               message: '几何体'
             }
-          },{
+          }, {
             path: 'textureImport',
             name: 'TextureImport',
             component: TextureImport,
@@ -127,7 +128,7 @@ const routes = [
             }
           },
         ]
-      },{
+      }, {
         path: 'canvas',
         name: 'Canvas',
         redirect: {name: 'CanvasIndex'},
@@ -142,7 +143,7 @@ const routes = [
             meta: {
               message: 'canvas事件'
             }
-          },{
+          }, {
             path: 'canvasDrag',
             name: 'CanvasDrag',
             component: CanvasDrag,
@@ -151,7 +152,7 @@ const routes = [
             }
           },
         ]
-      },{
+      }, {
         path: 'bitwiseOperation',
         name: 'BitwiseOperation',
         redirect: {name: 'BitwiseOperation'},
@@ -168,7 +169,7 @@ const routes = [
             }
           }
         ]
-      },{
+      }, {
         path: 'psychology',
         name: 'Psychology',
         redirect: {name: 'Psychology'},
@@ -177,17 +178,32 @@ const routes = [
         },
         children: [
           {
-            path: 'index',
-            name: 'Index',
-            component: Psychology,
+            path: 'psychologyList',
+            name: 'psychologyList',
+            component: psychologyList,
             meta: {
               message: '初识心理学'
             }
           }
         ]
+      }, {
+        path: 'es6',
+        name: 'ES',
+        redirect: {name: 'ESSyntax'},
+        meta: {
+          message: '重新学习es6'
+        },
+        children: [
+          {
+            path: 'Syntax',
+            name: 'syntax',
+            component: ESSyntax,
+            meta: {
+              message: '重新学习es6'
+            }
+          }
+        ]
       },
-
-
     ]
   },
   // {
