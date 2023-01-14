@@ -34,7 +34,27 @@
   import AsideMenu from '@/components/menu/index.vue'
   import HeaderComponent from '@/components/header/index.vue'
   import Logo from '@/components/logo/index.vue'
+  import axios from 'axios'
+  import {onMounted} from 'vue'
+  import {getBaseMessage} from '@/api/user'
 
+  onMounted(()=>{
+    // axios.get('/user/sys-config/configInfo?type=1').then(result=>{
+    //   console.log(result)
+    // })
+    // const instance = axios.create({
+    //   baseURL:'http://amt.livedev1.zkjin.com/backend',
+    //   timeout: 1000
+    // })
+    // instance.get('/user/sys-config/configInfo?type=1').then(res=>{
+    //   console.log('res',res)
+    // })
+    getBaseMessage({
+      type:1
+    }).then(res=>{
+      console.log(res)
+    })
+  })
 
   const open = () => {
     ElMessage('this is a message.')

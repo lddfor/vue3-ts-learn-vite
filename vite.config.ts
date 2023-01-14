@@ -8,7 +8,7 @@ import Components from 'unplugin-vue-components/dist/vite'
 import {ElementPlusResolver} from 'unplugin-vue-components/dist/resolvers'
 
 // https://vitejs.dev/config/ 初始化  npm install --registry=http://registry.npmmirror.com
-
+const baseURL= 'http://amt.livedev1.zkjin.com/backend'
 /** @type {import('vite').UserConfig} */
 export default defineConfig({
   plugins: [
@@ -30,10 +30,10 @@ export default defineConfig({
   },
   server: {
     proxy: {
-      '/backend': {
-        target: 'http://amt.livedev1.zkjin.com/backend',
+      '/backend': { //user/sys-config/configInfo?type=1
+        target: baseURL,
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/backend/, ''),
+        // rewrite: (path) => path.replace(/^\/backend/, ''),
       },
     }
   }
