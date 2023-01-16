@@ -17,6 +17,7 @@ import psychologyList from '@/view/psychology/index.vue'
 import Bitwise from '@/view/bitwiseOperation/bitwiseIndex.vue'
 import Home from '@/view/home/index.vue'
 import ESSyntax from '@/view/esSyntax/index.vue'
+import ClassPage from '@/view/classPage/index.vue'
 
 const About = {template: '<div>About</div>'}
 
@@ -200,6 +201,13 @@ const routes = [
             component: ESSyntax,
             meta: {
               message: '重新学习es6'
+            }
+          },{
+            path: 'Class',
+            name: 'class',
+            component: ClassPage,
+            meta: {
+              message: 'class学习'
             }
           }
         ]

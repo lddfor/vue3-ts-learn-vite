@@ -31,14 +31,20 @@ instance.interceptors.request.use(
 // @ts-ignore
 instance.interceptors.response.use(
   (response:any) => {
-    const { success, message, data } = response.data
+    const { status, message, data } = response
     // //   要根据success的成功与否决定下面的操作
     // if (success) {
     //   return data
     // } else {
     //   // 业务错误
     //   // ElMessage.error(message) // 提示错误消息
-    return Promise.reject(new Error(message))
+    console.log(status)
+    if(status === 200){
+      return data
+    }else {
+      return Promise.reject(new Error(message))
+    }
+
     // }
   },
   (error:any) => {

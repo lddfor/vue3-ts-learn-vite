@@ -49,11 +49,11 @@
     // instance.get('/user/sys-config/configInfo?type=1').then(res=>{
     //   console.log('res',res)
     // })
-    getBaseMessage({
-      type:1
-    }).then(res=>{
-      console.log(res)
-    })
+    // getBaseMessage({
+    //   type:1
+    // }).then(res=>{
+    //   console.log(res)
+    // })
   })
 
   const open = () => {
