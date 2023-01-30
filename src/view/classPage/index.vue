@@ -1,12 +1,18 @@
 <template>
   index3
+  <HighCode :code-string="codeString" />
 </template>
 <script setup>
 
-  import {onMounted} from 'vue'
+  import {onMounted, ref} from 'vue'
   import ClassDemo1 from './demo.js'
   import Demo2 from './demo2.js'
+
+
+  let codeString = ref('')
   onMounted(()=>{
+
+    codeString.value = ' demo.prop = 100'
     console.group('class 类的写法')
 
     console.log('typeof ClassDemo1',typeof ClassDemo1) //function

@@ -1,12 +1,32 @@
 <template>
   <h4>Set 和 Map 数据结构</h4>
+  <p>四三</p>
+  <HeightCode :code-string="code2" />
+  <p>四三</p>
+  <HeightCode :code-string="code3" />
+  <p>四三</p>
+  <HeightCode :code-string="code4" />
 </template>
 <script lang="ts" setup>
-
-  import {onMounted} from 'vue'
-
-
+  import {onMounted, ref} from 'vue'
+  import HeightCode from '@/components/hightCode/index.vue'
+  let code2 = ref('')
+  let code3 = ref('')
+  let code4 = ref('')
   onMounted(() => {
+
+    code2.value = `const map1 = new Map()
+    const key1 = 'this is key'
+    const value1 = 'this is value'
+    map1.set(key1, value1)
+    console.log('map1',map1)
+    console.log('map1',map1.get(key1))
+    console.log('map1.has(key1)',map1.has(key1)) // true
+    console.log('map1.delete(key1)',map1.delete(key1)) // true
+    console.log('map1.has(key1)',map1.has(key1)) // false`
+
+    code3.value = 'const map1 = new Map()'
+    code4.value = 'const map1 = new Map()22'
     const setList = new Set()
 
     const arr1 = [3, 5, 4, 5, 2, 2]
@@ -47,10 +67,10 @@
     let array2 = new Set([3, 4, 7, 9, 10, 11])
     // 求两个交集
     let a: number[] = []
-    let beMixed = new Set([...array1].filter(item=> array2.has(item)))
+    let beMixed = new Set([...array1].filter(item => array2.has(item)))
 
-    console.log('beMixed',beMixed)
-    console.log('a',a)
+    console.log('beMixed', beMixed)
+    console.log('a', a)
     // 求两个并集
     let allArray = new Set([...array1, ...array2])
     console.log([...allArray])
@@ -61,10 +81,13 @@
     const key1 = 'this is key'
     const value1 = 'this is value'
     map1.set(key1, value1)
-    console.log('map1',map1)
-    console.log('map1',map1.get(key1))
-    console.log('map1.has(key1)',map1.has(key1)) // true
-    console.log('map1.delete(key1)',map1.delete(key1)) // true
-    console.log('map1.has(key1)',map1.has(key1)) // false
+    console.log('map1', map1)
+    console.log('map1', map1.get(key1))
+    console.log('map1.has(key1)', map1.has(key1)) // true
+    console.log('map1.delete(key1)', map1.delete(key1)) // true
+    console.log('map1.has(key1)', map1.has(key1)) // false
+
+
+
   })
 </script>

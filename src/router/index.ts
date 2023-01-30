@@ -18,6 +18,10 @@ import Bitwise from '@/view/bitwiseOperation/bitwiseIndex.vue'
 import Home from '@/view/home/index.vue'
 import ESSyntax from '@/view/esSyntax/index.vue'
 import ClassPage from '@/view/classPage/index.vue'
+import Currying from '@/view/currying/index.vue'
+import Trivial from '@/view/trivial/index.vue'
+import Trifling from '@/view/trifling/index.vue'
+import TsHasError from '@/view/tsHasError/index.vue'
 
 const About = {template: '<div>About</div>'}
 
@@ -127,6 +131,13 @@ const routes = [
             meta: {
               message: 'ts 基础相关'
             }
+          },{
+            path: 'tsHasError',
+            name: 'TsHasError',
+            component: TsHasError,
+            meta: {
+              message: 'ts开发遇到的问题'
+            }
           },
         ]
       }, {
@@ -158,7 +169,7 @@ const routes = [
         name: 'BitwiseOperation',
         redirect: {name: 'BitwiseOperation'},
         meta: {
-          message: 'JavaScript位运算'
+          message: 'JavaScript杂项'
         },
         children: [
           {
@@ -167,6 +178,13 @@ const routes = [
             component: Bitwise,
             meta: {
               message: 'JS位运算'
+            }
+          }, {
+            path: 'trifling',
+            name: 'Trifling',
+            component: Trifling,
+            meta: {
+              message: '琐碎'
             }
           }
         ]
@@ -202,12 +220,26 @@ const routes = [
             meta: {
               message: '重新学习es6'
             }
-          },{
+          }, {
             path: 'Class',
             name: 'class',
             component: ClassPage,
             meta: {
               message: 'class学习'
+            }
+          }, {
+            path: 'currying',
+            name: 'Currying',
+            component: Currying,
+            meta: {
+              message: '数组功能'
+            }
+          }, {
+            path: 'trivial',
+            name: 'Trivial',
+            component: Trivial,
+            meta: {
+              message: '模板引用'
             }
           }
         ]
