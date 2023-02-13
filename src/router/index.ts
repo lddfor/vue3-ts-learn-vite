@@ -22,6 +22,7 @@ import Currying from '@/view/currying/index.vue'
 import Trivial from '@/view/trivial/index.vue'
 import Trifling from '@/view/trifling/index.vue'
 import TsHasError from '@/view/tsHasError/index.vue'
+import ComponentFunction from '@/view/componentFunction/index.vue'
 
 const About = {template: '<div>About</div>'}
 
@@ -240,6 +241,13 @@ const routes = [
             component: Trivial,
             meta: {
               message: '模板引用'
+            }
+          }, {
+            path: 'componentFunction',
+            name: 'ComponentFunction',
+            component: ComponentFunction,
+            meta: {
+              message: '组件'
             }
           }
         ]

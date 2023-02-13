@@ -23,10 +23,12 @@
       text: () => text
     })
     clipboard.on('success', () => {
-      ElMessage.success('粘贴成功!')
+      ElMessage.success('复制成功!')
+      clipboard.destroy()
     })
     clipboard.on('error', () => {
       ElMessage.success('粘贴失败!')
+      clipboard.destroy()
     })
     console.log('text', text)
 

@@ -9,9 +9,7 @@
   <high-code :code-string="vForCode" />
   <ul>
     <li v-for="(item, index) in list" ref="ItemRef" :key="item.key" @click="itemListHandle(item,index)">
-      {{
-        item.name
-      }}
+      {{ item.name }}
     </li>
   </ul>
   <span> 注: ref中的数组并不保证与源数组顺序相同</span>
@@ -64,7 +62,12 @@
     console.log(ItemRef.value)
   })
 
-  const templateCode = `const input = ref<HTMLInputElement | null>(null) // input的引用
+  const templateCode = `<input ref="input" type="text">
+    <div ref="divDom" class="ref-div-dom">divDom</div>
+    <el-button type="primary" @click="divHandle()">增加div高度</el-button>
+    <el-divider content-position="left">以上是通过 ref 修改css</el-divider>
+
+    const input = ref<HTMLInputElement | null>(null) // input的引用
 
     let divDom = ref<HTMLDivElement | null>(null) // div的引用
 

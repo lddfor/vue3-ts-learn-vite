@@ -10,15 +10,26 @@ pre.javascript{
 }
 
 .highlight-style{
-  position: relative;
 }
 
+.clearfix:after{
+  content:'';
+  display: block;
+  height: 0;
+  clear:both;
+  visibility: hidden;
+}
+pre code.hljs{
+  overflow-x: visible !important;
+  border-radius: 20px;
+}
 .copy-btn{
   cursor:pointer;
-  position: absolute;
-  right: 20px;
-  top: 50px;
+  //position: absolute;
+  float: right;
+  margin-top: 50px;
   color: white;
   font-size: 14px;
+  margin-right: 20px;
 }
 
